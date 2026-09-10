@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  version: green
+  labels:
+    name: nginx
+    version: green
+spec:
+  # modify replicas according to your case
+  replicas: 10
+  selector:
+    matchLabels:
+      name: nginx
+      version: green
+  template:
+    metadata:
+      name: nginx
+      labels:
+        name: nginx
+        version: green
+    spec:
+      containers:
+      - name: nginx
+        image: maxdevopstech/green:1.2.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
