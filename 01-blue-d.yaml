@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  version: blue
   labels:
     name: nginx
     version: blue
